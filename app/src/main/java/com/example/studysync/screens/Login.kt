@@ -43,6 +43,7 @@ import com.example.studysync.ui.theme.StudySyncTheme
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.painterResource
+import com.example.studysync.screens.ForgetPassword
 import com.example.studysync.MainActivity
 import com.example.studysync.api.Retrofitinstance
 import com.example.studysync.ui.theme.ButtonCustomised
@@ -122,7 +123,10 @@ fun LoginScreen( context: Context, modifier: Modifier = Modifier) {
             colors = OutlinedTextFieldCustomised
         )
 
-        TextButton(onClick = { /* Forgot password logic */ }, colors = TextButtonCustomised) {
+        TextButton(onClick = {
+            var act = context as Activity
+            act.startActivity(Intent(context, ForgetPassword::class.java))
+        }, colors = TextButtonCustomised) {
             Text(text = "Forgot Password?")
         }
 

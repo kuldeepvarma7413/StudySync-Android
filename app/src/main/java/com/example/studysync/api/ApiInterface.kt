@@ -5,6 +5,7 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiInterface {
     @Headers(
@@ -15,4 +16,7 @@ interface ApiInterface {
 
     @POST("auth/register")
     fun signup(@Body requestBody: Map<String, String>): Call<ResponseBody>
+
+    @POST("auth/forget-password/{email}")
+    fun forgetPassword(@Path("email") email: String): Call<ResponseBody>
 }

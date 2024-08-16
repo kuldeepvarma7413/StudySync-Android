@@ -17,6 +17,9 @@
         android:theme="@style/Theme.StudySync"
         tools:targetApi="31">
         <activity
+            android:name=".screens.ForgetPassword"
+            android:exported="false" />
+        <activity
             android:name=".screens.SignUp"
             android:exported="false" />
         <activity
